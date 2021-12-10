@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/general.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>index</title>
+
+    <!-- LOGIN PAGE-->
+  </head>
+  <body>
+    <!-- header contain logo and navbar -->
+    <!-- LOGO -->
+    <header class="header">
+      <a href="#">
+        <img class="logo" alt="IIT Ropar logo" src="IMG/logo.png" />
+      </a>
+    <!-- NAV-BUTTONS -->
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <!-- <li><a class="main-nav-link" href="#">Section 1</a></li>
+          <li>
+            <a class="main-nav-link" href="#">Section 2</a>
+          </li>
+          <li><a class="main-nav-link" href="#">Section 3</a></li> -->
+
+          <!-- DIRECTOR'S LOGIN BUTTON -->
+          <li><a href="director.html" class="btn director--login">Director Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- main container -->
+    <div class="main">
+
+
+      <!-- searchbar contains  searchbar-text and searchbar-icon  -->
+      <div class="searchbar">
+        
+        <input id="input_name" type="text" class="searchbar-text" placeholder="search here">
+        
+        <!-- searchicon -->
+        <a class="searchbar-icon" href="#" onClick="getname()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon--search"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+
+        </a>
+      </div>
+    </main>
+      <!-- PROFILE BAR -->
+       <div class="boxed">
+        <section class="profile-login">
+          
+          <div class="container grid grid-cols-2 grid-profile">
+            <div class="img-box">
+              <img
+                src="IMG/user-img.png"
+                class="f-img"
+                alt="passport size faculty image"
+              />
+            </div>
+            <div class="text-box">
+              <h2 id="index_faculty_name" class="secondary-heading f-name">NA</h2>
+              <p class="f-email">
+                <a id="index_email_id" class="email-link" href="mailto:hello@example.com"
+                >NA</a
+              >
+              </p>
+              <p class="dblp">
+                <a id="index_dblp_id" class="dblp-link" href="#" >NA</a>
+              </p>
+            </div>
+          </div>
+        </section>
+        </div>
+        
+      
+      <!-- <div id="content-publication" class="tabcontent">
+        <div id="root">
+            <table border="2px" width="1500px" >
+                <tr>
+                    <th id ="author_name" data-column="Username" data-order="desc"><h2>Author Name</h2></th> </th>
+                    <th id="link"data-column="Identifier" data-order="desc"><h2>Visit Profile</h2> </th>
+                </tr>
+                <tbody id="index_myTable">
+                </tbody>
+            </table>
+        </div>
+    </div>
+  -->
+      </div>
+    </div>
+    <script src="browser-app.js"></script>
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </body>
+</html>

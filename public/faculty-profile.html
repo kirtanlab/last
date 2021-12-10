@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100%">
+    
+    <link rel="stylesheet" href="CSS/general.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/table.css" />
+    <link rel="stylesheet" href="CSS/graph.css" />
+    <title>Faculty Profile</title>
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="header">
+      
+      <!-- LOGO -->
+      <a href="#">
+        <img class="logo" alt="IIT Ropar logo" src="IMG/logo.png" />
+      </a>
+
+      <!-- NAV_BAR CONTENTS-->
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+
+          <!-- EXAMPLES
+          <li><a class="main-nav-link" href="#">Section 1</a></li>
+          <li>
+            <a class="main-nav-link" href="#">Section 2</a>
+          </li>
+          <li><a class="main-nav-link" href="#">Section 3</a></li>-->
+
+          <li><a class="main-nav-link nav-signin" href="director.html">Director Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- PROFILE BAR -->
+    <main>
+      <div class="boxed-faculty">
+      <section class="profile">
+        <div class="container grid grid-cols-2 grid-profile">
+          <div class="img-box">
+            <img
+              src="IMG/user-img.png"
+              class="f-img"
+              alt="passport size faculty image"
+            />
+          </div>
+          <div class="text-box">
+            <h2 id="faculty_name" class="secondary-heading f-name">John Smith</h2>
+            <p class="f-email">
+              <a id="email_id" class="email-link" href="mailto:hello@example.com"
+                >emailid</a
+              >
+            </p>
+            <p class="dblp">
+              <a id="dblp_id" class="dblp-link" href="#" >dblpid</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+    </main>
+
+
+      <!-- PROFILE DETAILS-->
+
+      <section class="heading-tabs">
+        <div class="tab">
+        <div class="container grid grid-cols-3 tabs-grid">
+
+          <!-- PUBLICATION-->
+          
+            <button class="heading-name" onClick="opentab(event,'content-publication')">Publications</button>
+          
+
+          <!-- CO-AUTHOR -->
+          
+            <button class="heading-name" onClick="opentab(event,'content-co-author')">Co-author network</button>
+          
+
+          <!-- WORDCLOUD -->
+          
+            <button class="heading-name" onClick="opentab(event,'content-wordcloud')">Wordcloud</button>
+          
+        </div>
+
+      </div>
+
+
+        <hr style="width:1450px;height:3px;padding-left: 0px;color:brown;background-color: black;">
+
+
+        <!-- PUBLICATION CONTENT-->
+    
+        <div id="content-publication" class="tabcontent">
+            <div id="root">
+                <table border="2px" width="1500px" >
+                    <tr>
+                        <th id ="yeartitle" data-column="Username" data-order="desc"><h2>Year</h2> </th>
+                        <th id="pub_title_main"data-column="Identifier" data-order="desc"><h2>Publication Name</h2> </th>
+                        <th id="coauthor_title" data-column="firstName" data-order="desc"><h2>CO-AUTHORS</h2></th>
+                    </tr>
+                    <tbody id="myTable">
+                      
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        
+        <!-- Co-author List CONTENT -->
+        <div id="content-co-author" class="tabcontent">
+          <div id="body"></div>
+        </div>  
+        <!--
+        <div id="content-co-author" class="tabcontent">
+            <div id="co_root">
+                <table border="2px" width="1500px" >
+                    <tr>
+                        <th id ="co_name" data-column="Username" data-order="desc"><h2>Name</h2> </th>
+                    </tr>
+                    <tbody id="co_myTable">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        -->
+        <!-- wordcloud content-->
+        
+        <div id="content-wordcloud" class="tabcontent">
+          <!-- <button class="heading-name" onClick="opentab(event,'content-wordcloud')">GET Wordcloud</button>-->
+          <img id= "img" src = "" alt="word cloud">
+
+        </div>
+
+      </section>
+    
+    <script src="browser-app.js"></script>
+    <!--<script src="assets/JS/app.js"></script>-->
+    <!-- <script type="module" src="./assets/JS/hlr.js"></script> -->
+    <script src="script.js"></script>
+    
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  </body>
+</html>

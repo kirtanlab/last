@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/general.css" />
+    <link rel="stylesheet" href="CSS/table.css" />
+    
+    <link rel="stylesheet" href="CSS/style.css" />
+    <!-- LOGIN PAGE-->
+  </head>
+  <title>Director</title>
+  <body>
+
+    <!-- header contain logo and navbar -->
+    <!-- LOGO -->
+    <header class="header">
+        <a href="#">
+          <img class="logo" alt="IIT Ropar logo" src="IMG/logo.png" />
+        </a>
+        <!-- NAV-BUTTONS -->
+        <nav class="main-nav">
+          <ul class="main-nav-list">
+            
+            <!-- <li><a class="main-nav-link" href="#">Section 1</a></li>
+            <li>
+              <a class="main-nav-link" href="#">Section 2</a>
+            </li>
+            <li><a class="main-nav-link" href="#">Section 3</a></li> -->
+  
+            <!-- DIRECTOR'S LOGIN BUTTON -->
+            <li><a href="index.html" class="btn director--login">LOGOUT</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+      
+
+
+      <!-- MAIN -->
+      
+      <div class="main">
+
+        <!-- Director -->
+
+        <!-- DIRECTOR PROFILE -->
+      
+      <div class="boxed-director">
+        <section class="profile-director">
+          <div class="container grid grid-cols-2 grid-profile">
+            <div class="img-box">
+              <img
+                src="IMG/user-img.png"
+                class="f-img"
+                alt="passport size faculty image"
+              />
+            </div>
+            <div class="text-box">
+              <h2 class="secondary-heading f-name">Prof Rajeev Ahuja</h2>
+              
+              <p class="dblp">
+                <a class="dblp-link" href="https://dblp.org/pid/141/2327.html">dblp id</a>
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      
+
+        <div class="searchbar">
+           <input id="start_year" type="text" class="searchbar-text" placeholder="start year" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           
+           <input id="end_year"  type="text" class="searchbar-text" placeholder="end year" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           
+           <input id="number_pub" type="text" class="searchbar-text" placeholder="no.of publications " />
+           <br><br><br>
+   
+           <a class="searchbar-icon" href="#" onClick="getauthors()">
+             <svg
+               xmlns="http://www.w3.org/2000/svg"
+               class="icon--search"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke="currentColor"
+             >
+               <path
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 stroke-width="2"
+                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+               />
+             </svg>
+           </a>
+         </div>
+       
+
+    <!--Search Results -->
+    <!--for table-->
+         
+    <div id="res_table" class="table">
+      <div id="res_root">
+          <table border="2px" width="1500px" >
+              <tr>
+                  <th id ="res_name" data-column="Username" data-order="desc"><h2>NAME</h2> </th>
+                  <th id="res_email" data-column="Identifier" data-order="desc"><h2>EMAIL</h2> </th>
+                  <th id="res_dblp_id"  data-column="firstName" data-order="desc"><h2>DBLP-ID</h2></th>
+                  <th id="res_num_pub"  data-column="firstName" data-order="desc"><h2>TOTAL NUMBER OF PUBLICATION</h2></th>
+              </tr>
+              <tbody id="res_myTable">
+                
+              </tbody>
+          </table>
+      </div>
+  </div>    
+  
+    <!--for container-->
+    <!--<div class="container">
+      
+      
+      </div>
+    -->
+  </div>
+  <script src="browser-app.js"></script> 
+  <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+</body>
+</html>

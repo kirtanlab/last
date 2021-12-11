@@ -1,7 +1,12 @@
-body {
-  background-repeat: no-repeat, repeat;
-  background-color: #ffffff;
-}
+
+  body {
+    font-family: "Lato", sans-serif;
+    line-height: 1;
+    font-weight: 300;
+    color: #000000;
+    flex-wrap: wrap;
+  }
+
 /* specific element css */
 
 /* header-================== */
@@ -9,7 +14,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #697ba3;
+  background-color: #334086;
 
   /* Because we want header to be sticky later */
   height: 9.6rem;
@@ -27,19 +32,22 @@ body {
   border: 1px solid rgb(0, 0, 0);
   width: 1370px;
   display: none;
+  background-color: #8b99c2;
 }
 
 .boxed-res{
   border: 1px solid rgb(0, 0, 0);
   width: 1370px;
   display: block;
+  background-color: #8b99c2;
 }
 
 .boxed-director{
   border: 1px solid rgb(0, 0, 0);
   width: 1400px;
   display: block;
-  margin-top: auto;
+  margin-top: 10px;
+  background-color: #8b99c2;
 }
 
 
@@ -47,8 +55,15 @@ body {
 .boxed-faculty{
   border: 1px solid rgb(0, 0, 0);
   width: 1600px;
+  background-color: #8b99c2;
 }
 
+#index_email_id{ 
+  color: #000000;
+}
+#email_id{ 
+  color: #000000;
+}
 
 /**************************/
 /* NAVIGATION */

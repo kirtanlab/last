@@ -62,6 +62,10 @@ const getname = async () => {
     }
   }
 };
+//console.log("name "+ name);
+//sessionStorage.setItem("name", name);
+
+
 //for director page
 const getauthors = async () => {
   let start_year = document.getElementById("start_year").value;
@@ -97,6 +101,7 @@ const getauthors = async () => {
     }
   }
 };
+
 
 //fetching data and displaying it from dblp api
 const getdata = async (name) => {
@@ -144,6 +149,7 @@ const getdata = async (name) => {
   //Table data
   let cothors = co_authors;
   //console.log("cothor: " + cothors);
+
   //co-author list for co-author section
   const filtred_co_authos = final.map((doc) => {
     const array_authors = doc.info.authors.author;
@@ -154,8 +160,11 @@ const getdata = async (name) => {
     });
     return temp;
   });
-  let filtered_cothors = filtred_co_authos; //filtered list
-  //console.log("filtered cothor: " + filtered_cothors);
+  let filtered_cothors = filtred_co_authos;//filtered list
+  sessionStorage.setItem('myArray', filtered_cothors);
+  //for(let i = 0; i < array.length; i++){
+    //console.log("array["+i+"]: "+filtered_cothors[i]);
+  //}
 
   //CONNECTING FRONT_END
 
@@ -180,6 +189,7 @@ const getdata = async (name) => {
 
   //co_author section
 
+  /*
   co_buildTable();
 
   function co_buildTable() {
@@ -192,8 +202,10 @@ const getdata = async (name) => {
       co_table.innerHTML += co_row;
     }
   }
-
+  
   //co_author end
+  */
+
 
   //wordcloud
   //console.log('pubs: '+ pubs[0]);
@@ -281,9 +293,9 @@ const author = async (name) => {
   for (i in array_data) {
     if (array_data[i]._authName === name) {
       array_data[i]._year = await getyear(name);
-      console.log("year fun: " + array_data[i]._year);
+      //console.log("year fun: " + array_data[i]._year);
       array_data[i]._pub = await getPublications(name);
-      console.log("deblp" + array_data[i]._dblp_id);
+      //console.log("deblp" + array_data[i]._dblp_id);
       //return
       //console.log(array_data[i]);
     }
@@ -312,7 +324,26 @@ const author = async (name) => {
 author(name);
 //console.log(name);
 
-//co-author list for bubble graph
+
+
+
+/*
+const co_authors = final.map((doc) => {
+    const array_authors = doc.info.authors.author;
+    const temp = array_authors.map((doc) => {
+        return doc.text
+    })
+
+    return temp
+})
+console.log(co_authors);
+return co_authors;
+}
+*/
+//console.log(getCoauthors(name))
+
+
+//co-author list for  graph
 const getCoauthors = async (name) => {
   const resp = await fetch(
     `https://dblp.org/search/publ/api?q=${name}&format=json`
@@ -330,6 +361,9 @@ const getCoauthors = async (name) => {
     }
     return flag == 1;
   });
+
+
+
   const co_authors = final.map((doc) => {
     const array_authors = doc.info.authors.author;
     const temp = array_authors.map((doc) => {
@@ -338,23 +372,9 @@ const getCoauthors = async (name) => {
 
     return temp;
   });
-  //console.log(co_authors);
+  console.log(co_authors);
   return co_authors;
 };
-/*
-const co_authors = final.map((doc) => {
-    const array_authors = doc.info.authors.author;
-    const temp = array_authors.map((doc) => {
-        return doc.text
-    })
-
-    return temp
-})
-console.log(co_authors);
-return co_authors;
-}
-*/
-//console.log(getCoauthors(name))
 
 const network = async (name) => {
   let data_array = await getCoauthors(name);
@@ -379,8 +399,15 @@ const network = async (name) => {
   return object;
   // console.log(array);
 };
-let graph_data = network(name);
-console.log(graph_data);
+
+
+
+
+
+
+
+
+
 
 //graph
 

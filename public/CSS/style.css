@@ -1,3 +1,7 @@
+body {
+  background-repeat: no-repeat, repeat;
+  background-color: #ffffff;
+}
 /* specific element css */
 
 /* header-================== */
@@ -5,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #c5cbe9;
+  background-color: #697ba3;
 
   /* Because we want header to be sticky later */
   height: 9.6rem;
@@ -35,6 +39,7 @@
   border: 1px solid rgb(0, 0, 0);
   width: 1400px;
   display: block;
+  margin-top: auto;
 }
 
 

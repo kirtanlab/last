@@ -89,12 +89,13 @@ const getauthors = async () => {
   function res_buildTable() {
     var table = document.getElementById("res_myTable");
     table.innerHTML = "";
+    //$('.table').css('display','');
     for (var i = 0; i < array_data.length; i++) {
       var row = `<tr>
                         <td id="td">${array_data[i]._authName}</td>
-                        <td>${array_data[i]._email}</td>
-                        <td>${array_data[i]._dblp_id}</td>
-                        <td>${array_data[i]._pub}</td>
+                        <td id="td">${array_data[i]._email}</td>
+                        <td id="td"><a href="${array_data[i]._dblp_id}">${array_data[i]._dblp_id}</td>
+                        <td id="td">${array_data[i]._pub}</td>
                         </tr>`;
       table.innerHTML += row;
       //console.log("pubs: ["+i+"]"+pubs[i]);
@@ -144,10 +145,42 @@ const getdata = async (name) => {
     return temp;
   });
 
+  //getURL
+
+  const urls = final.map(doc=>{
+    return doc.info.url;
+  })
+
+  const getURL = async (name)=>{
+    const resp = await fetch(`https://dblp.org/search/publ/api?q=${name}&format=json`)
+    const respdata = await resp.json();
+    const result = respdata.result.hits.hit
+    const final = result.filter((doc) => {
+      let co_authors = doc.info.authors.author
+      let flag = 0;
+      for (let i = 0; i < co_authors.length; i++) {
+          if (co_authors[i].text === name) {
+              flag = 1;
+              break;
+          }
+      }
+      return flag == 1
+  })
+  
+  
+  //console.log(urls);
+    return urls;
+  }
+
+
+
   /*NEW*/
 
   //Table data
   let cothors = co_authors;
+  let url = urls;
+  console.log(url);
+
   //console.log("cothor: " + cothors);
 
   //co-author list for co-author section
@@ -177,8 +210,9 @@ const getdata = async (name) => {
     for (var i = 0; i < year.length; i++) {
       var row = `<tr>
                         <td id="td">${year[i]}</td>
-                        <td>${pubs[i]}</td>
-                        <td>${cothors[i]}</td>
+                        <td id="td">${pubs[i]}</td>
+                        <td id="td">${cothors[i]}</td>
+                        <td id="td"><a href="${url[i]}">${url[i]}</a></td>
                         </tr>`;
       table.innerHTML += row;
       //console.log("pubs: ["+i+"]"+pubs[i]);

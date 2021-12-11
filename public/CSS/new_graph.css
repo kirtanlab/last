@@ -1,8 +1,9 @@
 
 #graph{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 960px;
-  height: 500px;
+	width: 960px;
+	height: 400px;
+	font-size:9px
 }
 svg {
 	width: 1500px;

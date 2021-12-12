@@ -179,7 +179,7 @@ const getdata = async (name) => {
   //Table data
   let cothors = co_authors;
   let url = urls;
-  console.log(url);
+  //console.log(url);
 
   //console.log("cothor: " + cothors);
 
@@ -406,7 +406,7 @@ const getCoauthors = async (name) => {
 
     return temp;
   });
-  console.log(co_authors);
+  //console.log(co_authors);
   return co_authors;
 };
 

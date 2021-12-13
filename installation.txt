@@ -1,0 +1,7 @@
+--> ADD ENV FILE
+-->requirement: node lower version 
+-->code: npm i (instalation of packages)
+         npm nodemon(if it is not there) 
+         
+
+        

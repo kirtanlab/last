@@ -34,41 +34,6 @@ var key = function(d){ return d.data.label; };
 
 let array = sessionStorage.getItem('myArray');
 
-
-
-// //cothors
-// //co-author list for  graph
-// const new_getCoauthors = async (name) => {
-// 	const resp = await fetch(
-// 	  `https://dblp.org/search/publ/api?q=${name}&format=json`
-// 	);
-// 	const respdata = await resp.json();
-// 	const result = respdata.result.hits.hit;
-// 	const final = result.filter((doc) => {
-// 	  let co_authors = doc.info.authors.author;
-// 	  let flag = 0;
-// 	  for (let i = 0; i < co_authors.length; i++) {
-// 		if (co_authors[i].text === name) {
-// 		  flag = 1;
-// 		  break;
-// 		}
-// 	  }
-// 	  return flag == 1;
-// 	});
-  
-  
-  
-// 	const co_authors = final.map((doc) => {
-// 	  const array_authors = doc.info.authors.author;
-// 	  const temp = array_authors.map((doc) => {
-// 		return doc.text;
-// 	  });
-  
-// 	  return temp;
-// 	});
-// 	console.log(co_authors);
-// 	return co_authors;
-//   };
 let children = []
 const new_network = async (name)=>{
 	const array  = await getCoauthors(name);
@@ -203,6 +168,5 @@ const new_network = async (name)=>{
 		.remove();
 	};
 
-	  //return children;
 	}
 new_network(name);

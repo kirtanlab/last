@@ -23,108 +23,125 @@
 
     <!-- LOGIN PAGE-->
   </head>
-  <body style="
-  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);">
-    <!-- header contain logo and navbar -->
-    <!-- LOGO -->
-    <header class="header">
-      <a href="index.html">
-        <img class="logo" alt="IIT Ropar logo" src="IMG/logo.png" />
-      </a>
-    <!-- NAV-BUTTONS -->
-      <nav class="main-nav">
-        <ul class="main-nav-list">
-          <!-- <li><a class="main-nav-link" href="#">Section 1</a></li>
-          <li>
-            <a class="main-nav-link" href="#">Section 2</a>
-          </li>
-          <li><a class="main-nav-link" href="#">Section 3</a></li> -->
+    <body style="background-image: url('./IMG/iitropar.jpg');background-repeat: no-repeat; background-attachment: fixed;
+    background-size: cover;">
+      <!-- header contain logo and navbar -->
 
-          <!-- DIRECTOR'S LOGIN BUTTON -->
-          <li><a href="login.html" class="btn director--login">Director Login</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- main container -->
-    <div class="main">
-
-
-      <!-- searchbar contains  searchbar-text and searchbar-icon  -->
-      <div class="searchbar">
-        
-        <div class="input-group input-group-lg">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-lg"><h2>Dr.</h2></span>
-          </div>
-          <input id="input_name" type="text" class="searchbar-text form-control" placeholder="search here" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-        </div>
-        
-        <!-- searchicon -->
-        <a class="searchbar-icon" href="#" onClick="getname()">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon--search"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
-
+      <!-- LOGO -->
+      <header class="header">
+        <a href="index.html">
+          <img class="logo" alt="IIT Ropar logo" src="IMG/logo.png" />
         </a>
-      </div>
-    </main>
-      <!-- PROFILE BAR -->
-       <div class="boxed">
-        <section class="profile-login">
+
+      <!-- NAV-BUTTONS -->
+        <nav class="main-nav">
+          <ul class="main-nav-list">
+
+            <!-- DIRECTOR'S LOGIN BUTTON -->
+            <li><a href="login.html" class="btn director--login">Director Login</a></li>
           
-          <div class="container grid grid-cols-2 grid-profile">
-            <div class="img-box">
-              <img
-                src="IMG/user-img.png"
-                class="f-img"
-                alt="passport size faculty image"
-              />
+          </ul>
+
+        </nav>
+
+      </header>
+
+      <!-- main container -->
+      <div class="main">
+
+
+        <!-- searchbar contains  searchbar-text and searchbar-icon  -->
+        <div class="searchbar">
+          
+          <div class="input-group input-group-lg">
+            
+            <div class="input-group-prepend">
+              
+              <span class="input-group-text" id="inputGroup-sizing-lg"><h2>Dr.</h2></span>
+            
             </div>
-            <div class="text-box">
-              <h2 id="index_faculty_name" class="secondary-heading f-name">NA</h2>
-              <p class="f-email">
-                <a id="index_email_id" class="email-link" href="mailto:hello@example.com"
-                >NA</a
-              >
-              </p>
-              <p class="dblp">
-                <a id="index_dblp_id" class="dblp-link" href="#" >NA</a>
-              </p>
-            </div>
+            
+            <input id="input_name" type="text" class="searchbar-text form-control" placeholder="search here" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+          
           </div>
-        </section>
-        </div>
+          
+          <!-- searchicon -->
+          <a class="searchbar-icon" href="#" onClick="getname()">
+            
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon--search"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+
+          </a>
         
-      
-      <!-- <div id="content-publication" class="tabcontent">
-        <div id="root">
-            <table border="2px" width="1500px" >
-                <tr>
-                    <th id ="author_name" data-column="Username" data-order="desc"><h2>Author Name</h2></th> </th>
-                    <th id="link"data-column="Identifier" data-order="desc"><h2>Visit Profile</h2> </th>
-                </tr>
-                <tbody id="index_myTable">
-                </tbody>
-            </table>
         </div>
-    </div>
-  -->
+      
+      </main>
+        
+      <!-- PROFILE BAR -->
+        
+      <div class="boxed">
+          
+        <section class="profile-login">
+            
+            <div class="container grid grid-cols-2 grid-profile">
+              
+              <div class="img-box">
+                
+                <img
+                  src="IMG/user-img.png"
+                  class="f-img"
+                  alt="passport size faculty image"
+                />
+              </div>
+              
+              <div class="text-box">
+                
+                <h2 id="index_faculty_name" class="secondary-heading f-name">NA</h2>
+                
+                <p class="f-email">
+                  <a id="index_email_id" class="email-link" href="mailto:hello@example.com"
+                  >NA</a
+                >
+                
+              </p>
+                
+              <p class="dblp">
+                  
+                <a id="index_dblp_id" class="dblp-link" href="#" >NA</a>
+                
+              </p>
+              
+            </div>
+            
+          </div>
+          
+        </section>
+          
       </div>
+        
     </div>
-    <script src="browser-app.js"></script>
-    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      
+  </div>
+      
+  <script src="browser-app.js"></script>
+      
+  <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+      
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
   </body>
+
 </html>

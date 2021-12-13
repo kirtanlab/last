@@ -301,7 +301,7 @@ const graph_data = async(name)=>{
   final_object.links = links_array;
   // console.log(nodes_array);
   // console.log(links_array);
-  // console.log(final_object);
+   console.log(final_object);
 
 d3.json(final_object,async function(data){
   // Extract the nodes and links from the data.
@@ -353,18 +353,31 @@ d3.json(final_object,async function(data){
       .style("stroke", function(d) { return color(d.name); });;
   
   // Now it's the nodes turn. Each node is drawn as a flag.
-  var node = d3.select('#flags').selectAll('img')
-    .data(force.nodes())
-    .enter().append('img')
-  //we return the exact flag of each country from the image
-    .attr('class', function (d) {
-      console.log(d);
-      return 'flag flag-'})
+
+    // Create the groups under svg
+  var gnodes = d3.select('#flags').selectAll('g.gnode')
+  .data(graph.nodes)
+  .enter()
+  .append('g')
+  .classed('gnode', true);
+
+  // Add one circle in each group
+  var node = gnodes.append("circle")
+  .attr("class", "node")
+  .attr("r", 5)
+  .call(force.drag)
+
+  
   //we call some classes to handle the mouse
     .on('mouseover', mouseoverHandler)
     .on("mousemove",mouseMoving)
     .on("mouseout", mouseoutHandler);
-  
+
+    // Append the labels to each group
+  var labels = gnodes.append("text")
+  .text(function(d) {
+    return d.name;
+  });
   // We're about to tell the force layout to start its
   // calculations. We do, however, want to know when those
   // calculations are complete, so before we kick things off
@@ -376,9 +389,7 @@ d3.json(final_object,async function(data){
     // that define where the node should be positioned.
     // To move the node, we set the appropriate SVG
     // attributes to their new values. 
-     node.style('left', function (d) { return d.x + 'px'; })
-         .style('top', function (d) { return d.y + 'px'; })
-         .call(force.drag);
+     
     
     // We also need to update positions of the links.
     // For those elements, the force layout sets the

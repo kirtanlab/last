@@ -81,16 +81,37 @@ const getauthors = async () => {
     var table = document.getElementById("res_myTable");
     table.innerHTML = "";
     for (var i = 0; i < array_data.length; i++) {
+      //name = array_data[i]._authName
       var row = `<tr>
                         <td id="td">${array_data[i]._authName}</td>
                         <td id="td">${array_data[i]._email}</td>
                         <td id="td"><a href="${array_data[i]._dblp_id}">${array_data[i]._dblp_id}</td>
                         <td id="td">${array_data[i]._pub}</td>
+                        <td class="get_name" id="td"><button id="view_profile" onclick="viewprofile()" class="btnSelect">VIEW PROFILE</button></td>
                         </tr>`;
       table.innerHTML += row;
     }
   }
 };
+//<td id="td"><a id="view_profile" href="#" id="view_profile" data-custom-value="${array_data[i]._authName}"><h2>VIEW PROFILE</h2></td>
+
+      const viewprofile = (evt) => {
+        
+          // var currentRow=$("#get_name").closest("tr");
+          // let auth_name = $("#get_name").text();
+
+          var auth_name = $(".get_name").closest('tr').children('td:first').text(); // get current row 1st TD value
+          name = auth_name;
+          console.log("view_name"+name)
+
+          // $("#view_profile").attr("href", "faculty-profile.html");
+          window.open("faculty-profile.html")
+
+      }
+
+
+
+
 
 
 //fetching data and displaying it from dblp api

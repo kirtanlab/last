@@ -50,34 +50,33 @@ background-size: cover;">
 	
 	<script>
 		
-		function login()
-		{
-		var uname = document.getElementById("username").value;
-		var pwd = document.getElementById("password").value;
-		var valid_name="Rajeev Ahuja";
-		var valid_pass="example";
-		if(uname =='')
-		{
-			alert("please enter user name.");
-		}
-		else if(pwd=='')
-		{
-        	alert("enter the password");
-		}
-		else if(uname != valid_name)
-		{
-			alert("Enter valid username.");
-		}
-		else if(pwd != valid_pass)
-		{
-			alert("Enter valid password.");
-		}
-		else
-		{
-		alert('Thank You for Login & You are Redirecting to Director Page');
-	//Redirecting to director page
-		window.location = "director.html";
-		}
+		function login() {
+
+			var uname = document.getElementById("username").value;
+			var pwd = document.getElementById("password").value;
+			var valid_name="Rajeev Ahuja";
+			var valid_pass="example";
+			if(uname =='')
+			{
+				alert("please enter user name.");
+			}
+			else if(pwd=='')
+			{
+				alert("enter the password");
+			}
+			else if(uname != valid_name)
+			{
+				alert("Enter valid username.");
+			}
+			else if(pwd != valid_pass)
+			{
+				alert("Enter valid password.");
+			}
+			else
+			{
+				alert('Thank You for Login & You are Redirecting to Director Page');
+				window.location = "director.html";
+			}
 
 	}
 	

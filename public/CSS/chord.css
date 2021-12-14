@@ -3,4 +3,9 @@
 #chartdiv {
   width: 1600px;
   height: 1400px;
+  padding-left: 100px;
+}
+img {
+  vertical-align: middle;
+  margin-left: 15%;
 }
